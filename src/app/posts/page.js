@@ -26,7 +26,7 @@ export default async function Posts() {
         <h1 className="text-center font-bold text-3xl lg:text-5xl my-5">
           Display All Services
         </h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  ">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 ">
           {posts.map((post) => (
             <div key={post.id} className="card w-96 bg-base-100 shadow-xl">
               <figure className="px-10 pt-10">
@@ -39,7 +39,7 @@ export default async function Posts() {
                 />
               </figure>
 
-              <div className="card-body items-center text-center ">
+              <div className="card-body items-center text-center my-10">
                 <Link href={`/posts/${post.id}`}>
                   <h2 className="card-title text-white btn btn-warning">{post.title}</h2>
                 </Link>
