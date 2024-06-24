@@ -1,11 +1,22 @@
-import React from 'react'
+"use client"
+import React, { useEffect, useState } from 'react'
 import getAllPosts from '../lib/getAllPosts'
 import Link from 'next/link'
 import card1 from "../../assets/images/team/team1.jpg"
 import Image from 'next/image'
-export default async function Posts() {
+// eslint-disable-next-line @next/next/no-async-client-component
+// export default async function Posts() {
+export default function Posts() {
     // fetxh data
-    const posts =  await getAllPosts()
+    // const posts =  await getAllPosts()
+
+    const [posts, setPosts] = useState([]);
+
+    useEffect(()=>{
+      fetch("./db.json")
+        .then((res) => res.json())
+        .then((data) => setPosts(data));
+    },[])
 
 
    
